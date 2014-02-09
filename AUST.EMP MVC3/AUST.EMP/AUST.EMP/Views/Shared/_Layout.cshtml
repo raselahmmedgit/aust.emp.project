@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/site.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap/css/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap/css/bootstrap-theme.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/themes/base/jquery.ui.all.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/jquery-1.8.3.min.js")" ></script>
+    @*<script src="@Url.Content("~/Scripts/jquery-2.1.0.min.js")"></script>*@
+    @*<script src="@Url.Content("~/Scripts/jquery-ui-1.8.11.min.js")"></script>*@
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.24.min.js")"></script>
+    @*<script src="@Url.Content("~/Scripts/jquery-ui-1.10.4.min.js")"></script>*@
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-2.7.1.js")"></script>
+    <script src="@Url.Content("~/Scripts/App/app-jq.js")"></script>
+    @Html.Partial("_JQDialogPartial")
+    @Html.Partial("_KendoPartial")
+</head>
+<body>
+    <header>
+        <div id="header" class="container">
+            <div id="logo" class="row clearfix">
+                <h1 class="col-sm-3 hidden-sm">Emp Info &hearts;</h1>
+                <h1 class="col-sm-3 visible-sm">Emp Info &hearts;</h1>
+
+            </div>
+        </div>
+    </header>
+
+    <div id="main-body" class="container">
+
+        <div id="main-menu" class="row clearfix">
+            <ul id="menu">
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#orders">Orders</a></li>
+            </ul>
+        </div>
+        <div id="main-container" class="row clearfix">
+            @RenderBody()
+            <div class="col-lg-4">
+                <section id="profile" class="well">
+                    <h2 class="ra-well-title">Employe Profile</h2>
+
+                    <div class="row">
+                        <div class="col-lg-5 col-sm-2">
+                            <img src="/content/images/photo.jpg" class="ra-avatar img-responsive" />
+                        </div>
+
+                        <div class="col-lg-7 col-sm-2">
+                            <span class="ra-first-name">Jonathan</span>
+                            <span class="ra-last-name">Dodsworth</span>
+                            <div class="ra-position">Inside Sales Coordinator</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="employe-profile-form" class="well">
+            <h2 class="ra-well-title">Profile Setup</h2>
+
+            <div class="form-horizontal form-widgets col-sm-6">
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="name">Name</label>
+                    <div class="col-sm-8 col-md-6">
+                        <input id="name" value="Johnatan Dodsworth" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="birthday">Birthday</label>
+                    <div class="col-sm-8 col-md-6">
+                        <input type="date" value="10/09/1979" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="gender">Gender</label>
+                    <div class="col-sm-8 col-md-6">
+                        <select id="gender">
+                            <option selected>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="language">Language</label>
+                    <div class="col-sm-8 col-md-6">
+                        <select id="language">
+                            <option selected>English</option>
+                            <option>German</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal form-widgets col-sm-6">
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="occupation">Occupation</label>
+                    <div class="col-sm-8 col-md-6">
+                        <input id="occupation" placeholder="e.g. Developer" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="skills">Skills</label>
+                    <div class="col-sm-8 col-md-6">
+                        <select id="skills" multiple>
+                            <option>C</option>
+                            <option>C++</option>
+                            <option selected>C#</option>
+                            <option>JavaScript</option>
+                            <option selected>jQuery</option>
+                            <option>Git</option>
+                            <option>Node.js</option>
+                            <option>Ruby</option>
+                            <option>Ruby on Rails</option>
+                            <option>Kendo UI</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="experience">Experience</label>
+                    <div class="col-sm-8 col-md-6">
+                        <input id="experience" type="number" value="4" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="form-horizontal form-widgets col-sm-12">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="bio">Short bio</label>
+                    <div class="col-sm-10">
+                        <textarea id="bio"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons-wrap">
+                <button class="k-button k-state-default">Cancel</button>
+                <button class="k-button k-state-default">Update</button>
+            </div>
+        </div>
+
+        <div id="orders" class="ra-section"></div>
+
+        <div id="schedule" class="ra-section"></div>
+
+
+    </div>
+    <footer>
+        <div id="header" class="container">
+            <div id="logo" class="row clearfix">
+                Copyright &copy; @DateTime.Now.Year <a href="http://raselahmmed.com/">Rasel Ahmmed Bappi</a>. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
